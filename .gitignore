@@ -1,0 +1,74 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+# *.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+!shaderc.exe
+!shadercRelease.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+!shaderc.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Libs and configs
+/src/lua/
+/.vscode/
+/.cache/
+/build/
+/include/xxHashTable/build
+
+#FMOD stuff
+/projects/FMOD/.unsaved/
+/projects/FMOD/.restore/
+/projects/FMOD/Metadata/ProfilerSession/
+
+#Misc
+#Audacity folder, only because one of the projects is too large for git's limit
+/projects/Audacity/
+
+#Dont Upload external dependencies
+/include/openjdk-stripped
