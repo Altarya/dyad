@@ -10,9 +10,10 @@
   #ifndef _CRT_SECURE_NO_WARNINGS
     #define _CRT_SECURE_NO_WARNINGS
   #endif
-  #include <winsock2.h>
-  #include <ws2tcpip.h>
-  #include <windows.h>
+    #include <winsock2.h>
+    #include <ws2tcpip.h>
+    #include <Mstcpip.h>
+    #include <windows.h>
 #else
   #define _POSIX_C_SOURCE 200809L
   #ifdef __APPLE__
