@@ -8,6 +8,23 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 	set(BUILD_DEBUG ON)
 endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
 
-set(DYAD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/")
-include_directories("${DYAD_DIR}/src")
-add_library(dyad STATIC "${DYAD_DIR}/src/dyad.c" "${DYAD_DIR}/src/dyad.h")
+option(BUILD_STATIC "Build Dyad as a static library" OFF)
+
+#Setup target
+file(GLOB dyad_headers ${CMAKE_SOURCE_DIR}/src/*.h)
+file(GLOB dyad_sources ${CMAKE_SOURCE_DIR}/src/*.c)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+if(BUILD_STATIC)
+    add_library(dyad STATIC ${dyad_sources} ${dyad_headers})
+    else()
+    add_library(dyad SHARED ${dyad_sources} ${dyad_headers})
+endif(BUILD_STATIC)
+
+if(WIN32)
+    target_link_libraries(dyad PRIVATE wsock32 ws2_32)
+endif(WIN32)
+
+#Use C17
+set_property(TARGET dyad PROPERTY C_STANDARD 17)
+set_property(TARGET dyad PROPERTY C_STANDARD_REQUIRED ON)
