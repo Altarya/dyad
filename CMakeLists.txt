@@ -8,7 +8,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 	set(BUILD_DEBUG ON)
 endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
 
-option(BUILD_STATIC "Build Dyad as a static library" OFF)
+option(BUILD_DYAD_STATIC "Build Dyad as a static library" OFF)
 
 #Setup target
 file(GLOB dyad_headers ${CMAKE_SOURCE_DIR}/src/*.h)
