@@ -11,7 +11,12 @@
 #include <stdarg.h>
 
 #ifdef _WIN32
-  #include <windows.h> /* For SOCKET */
+    #ifndef _WINSOCK2API_
+        #include <winsock2.h>
+    #endif
+    #ifndef _WINDOWS_
+        #include <windows.h> /* For SOCKET */
+    #endif
 #endif
 
 
